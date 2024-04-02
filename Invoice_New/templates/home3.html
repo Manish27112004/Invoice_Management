@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Management System</title>
+    <style>
+        body {
+            /* Set background image */
+            background-image: url('invoice_background.jpg');
+            /* Adjust background image properties */
+            background-size: cover; /* Cover the entire body */
+            background-position: center; /* Center the image */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            color: white; /* Title color */
+            text-align: center; /* Center the title */
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        h1 {
+            padding-top: 50px; /* Adjust title position */
+        }
+    </style>
+</head>
+<body>
+    <h1>SAKEC STORES</h1>
+
+    <button onclick="redirectToLink1()" class="button">Create Invoice</button>
+    <br>
+    <br>
+    <button onclick="redirectToLink2()" class="button">View Invoice</button>
+    <br>
+    <br>
+    <button onclick="redirectToLink3()" class="button">Generate Report</button>
+
+    <script>
+        function redirectToLink1() {
+            window.location.href = "{{ url_for('create_invoice') }}";
+        }
+
+        function redirectToLink2() {
+            window.location.href = "{{ url_for('view_invoices') }}";
+        }
+
+        function redirectToLink3() {
+            window.location.href = "{{ url_for('generate_report') }}";
+        }
+    </script>
+</body>
+</html>

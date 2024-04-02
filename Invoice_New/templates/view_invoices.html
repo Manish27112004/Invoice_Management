@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Invoices</title>
+</head>
+<body>
+    <h1>Invoices</h1>
+    <ul>
+        {% for invoice in invoices %}
+        <li><a href="{{ url_for('view_invoice', invoice_id=invoice['id']) }}">Invoice {{ invoice['id'] }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
